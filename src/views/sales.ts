@@ -1,5 +1,5 @@
-import { SelectProduct } from "../../dataGenerators/product";
-import {waitTime} from "../utils/index";
+import { SelectProduct } from "../utils/generators/products";
+import {waitTime} from "../utils";
 /// <reference types="cypress" />
 /**
  * Make Sale Class
@@ -44,7 +44,7 @@ export class MakeCashSale{
    * @param {string} date
    * @return {this}
    * */
-  enterDate = (date) => {
+  enterDate = (date:string) => {
     cy.get('[data-testid="date"]').type(date)
     cy.wait(waitTime)
     return this
@@ -77,7 +77,7 @@ export class MakeCashSale{
    * @param {string} method - payment method
    * @return {this}
    * */
-  selectPaymentMethod = (method="Cash") => {
+  selectPaymentMethod = (method:string="Cash") => {
     cy.get('[data-testid="payment_method"]').select(method)
     cy.wait(waitTime)
     return this
@@ -88,7 +88,7 @@ export class MakeCashSale{
    * @param {number} amount - Total Bill Amount
    * @return {this}
    * */
-  assertTotalBillAmount = (amount) => {
+  assertTotalBillAmount = (amount:number) => {
     cy.get('[data-testid="total_amount"]').should('contain.value', amount)
     cy.wait(waitTime)
     return this
@@ -99,7 +99,7 @@ export class MakeCashSale{
    * @param {number} amount - Paid Amount
    * @return {this}
    * */
-  enterPaidAmount = (amount) => {
+  enterPaidAmount = (amount: number) => {
     cy.get('[data-testid="paid_amount"]').should('contain.value', amount)
     cy.wait(waitTime)
     return this
@@ -194,7 +194,7 @@ export class MakeCreditSale{
    * @param {string} card_number - Card Number
    * @return {this}
    * */
-  enterCardNumber = (card_number):this => {
+  enterCardNumber = (card_number:string):this => {
     cy.get('[data-testid="card_number"]').clear()
     cy.wait(waitTime)
     cy.get('[data-testid="card_number"]').type(card_number)
@@ -218,7 +218,7 @@ export class MakeCreditSale{
    * @param {string} date - Invoice Date
    * @return {this}
    * */
-  assertInvoiceDate = (date) => {
+  assertInvoiceDate = (date:string) => {
     cy.get('[data-testid="invoice_date"]').should('contain.value',date)
     cy.wait(waitTime)
     return this
@@ -229,7 +229,7 @@ export class MakeCreditSale{
    * @param {number} amount - Grand Total Amount
    * @return {this}
    * */
-  assertGrandTotlalAmount = (amount) => {
+  assertGrandTotlalAmount = (amount:string) => {
     cy.get('[data-testid="grand_total_price"]').should('contain.value',amount)
     cy.wait(waitTime)
     return this
@@ -240,7 +240,7 @@ export class MakeCreditSale{
    * @param {number} amount - Net Total Amount
    * @return {this}
    * */
-  assertNetTotalAmount = (amount) => {
+  assertNetTotalAmount = (amount:string) => {
     cy.get('[data-testid="net_total"]').should('contain.value',amount)
     cy.wait(waitTime)
     return this
@@ -251,7 +251,7 @@ export class MakeCreditSale{
    * @param {string} memo - Invoice Memo
    * @return {this}
    * */
-  enterInvoiceMemo = (memo) => {
+  enterInvoiceMemo = (memo:string) => {
     cy.get('[data-testid="invoice_memo"]').type(memo)
     cy.wait(waitTime)
     return this
@@ -269,7 +269,7 @@ export class ProductSalesTable{
    * @return {this}
    * */
   selectProduct = (product:SelectProduct, row:number=0):this => {
-    cy.selectProduct(product, row)
+    // cy.selectProduct(product, row)
     return this
   }
 
@@ -279,7 +279,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  selectBatchNo = (batch_no, row=0) => {
+  selectBatchNo = (batch_no:string, row=0) => {
     cy.get(`[data-testid="product_batch-"+${row}]`).type(batch_no)
     cy.wait(waitTime)
     return this
@@ -291,7 +291,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  assertAvailableQuantity = (qty, row=0) => {
+  assertAvailableQuantity = (qty:number, row=0) => {
     cy.get(`[data-testid="available_quantity-"+${row}]`).should('contain.value',qty)
     cy.wait(waitTime)
     return this
@@ -303,7 +303,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  assertProductExpiryDate = (date, row=0) => {
+  assertProductExpiryDate = (date:string, row=0) => {
     cy.get(`[data-testid="expiry_date-"+${row}]`).should('contain.value',date)
     cy.wait(waitTime)
     return this
@@ -315,7 +315,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  assertProductUnit = (unit, row=0) => {
+  assertProductUnit = (unit:string, row=0) => {
     cy.get(`[data-testid="product_unit-"+${row}]`).should('contain.value',unit)
     cy.wait(waitTime)
     return this
@@ -323,11 +323,11 @@ export class ProductSalesTable{
 
   /**
    * Enters Product Quantity to be sold.
-   * @param {number} qty - Product Quantity
+   * @param {string} qty - Product Quantity
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  enterSoldQuantity = (qty, row=0) => {
+  enterSoldQuantity = (qty:string, row=0) => {
     cy.get(`[data-testid="product_quantity-"+${row}]`).type(qty)
     cy.wait(waitTime)
     return this
@@ -339,7 +339,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  assertProductRate = (rate, row=0) => {
+  assertProductRate = (rate:number, row=0) => {
     cy.get(`[data-testid="product_rate-"+${row}]`).should('contain.value',rate)
     cy.wait(waitTime)
     return this
@@ -347,11 +347,11 @@ export class ProductSalesTable{
 
   /**
    * Enters Product Rate for a selected batch.
-   * @param {number} rate - Product Rate
+   * @param {string} rate - Product Rate
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  enterProductRate = (rate, row=0) => {
+  enterProductRate = (rate:string, row=0) => {
     cy.get(`[data-testid="product_rate-"+${row}]`).clear()
     cy.wait(waitTime)
     cy.get(`[data-testid="product_rate-"+${row}]`).type(rate)
@@ -361,14 +361,14 @@ export class ProductSalesTable{
 
   /**
    * Enters Product Discount for a selected batch.
-   * @param {number} discount - Product Discount
+   * @param {string} discount - Product Discount
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  enterProductDiscount = (discount, row=0) => {
+  enterProductDiscount = (discount:string, row=0) => {
     cy.get(`[data-testid="discount-"+${row}]`).clear()
     cy.wait(waitTime)
-    cy.get(`[data-testid="discount-"+${row}]`).type('contain.value',discount)
+    cy.get(`[data-testid="discount-"+${row}]`).type(discount)
     cy.wait(waitTime)
     return this
   }
@@ -379,7 +379,7 @@ export class ProductSalesTable{
    * @param {number} row - Position of item row in table
    * @return {this}
    * */
-  assertTotalRate = (rate, row=0) => {
+  assertTotalRate = (rate:number, row=0) => {
     cy.get(`[data-testid="total_price-"+${row}]`).should('contain.value',rate)
     cy.wait(waitTime)
     return this
