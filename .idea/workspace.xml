@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fb6dcfa-26cc-47b7-8cde-67667a5f009e" name="Changes" comment="fixed types">
-      <change afterPath="$PROJECT_DIR$/src/views/product.ts" afterDir="false" />
+    <list default="true" id="2fb6dcfa-26cc-47b7-8cde-67667a5f009e" name="Changes" comment="added add product class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/sales.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/sales.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/views/product.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,7 +64,7 @@
       <workItem from="1679957353289" duration="4210000" />
       <workItem from="1680108072004" duration="4886000" />
       <workItem from="1680197229724" duration="258000" />
-      <workItem from="1680242398450" duration="2718000" />
+      <workItem from="1680242398450" duration="3704000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <created>1679957396703</created>
@@ -109,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680152589073</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed types">
+      <created>1680247025043</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680247025043</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added add product class">
+      <created>1680247046090</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680247046090</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +159,7 @@
     <MESSAGE value="add sales view" />
     <MESSAGE value="add utils funcs" />
     <MESSAGE value="fixed types" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed types" />
+    <MESSAGE value="added add product class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added add product class" />
   </component>
 </project>
