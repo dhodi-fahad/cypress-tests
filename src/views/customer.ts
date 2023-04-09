@@ -112,4 +112,48 @@ export class AddCustomer {
     cy.wait(500);
     return this;
   };
+
+  /**
+   * Confirms the name of the customer.
+   * @param name - The expected name of the customer.
+   * @returns The instance of the AddCustomer page.
+   */
+  confirmCustomerName = (name: string): this => {
+    cy.get('[data-testid="customer_name"]').find('input').should('have.value', name)
+    cy.wait(500)
+    return this
+  }
+
+  /**
+   * Confirms the address of the customer.
+   * @param address - The expected address of the customer.
+   * @returns The instance of the AddCustomer page.
+   */
+  confirmCustomerAddress = (address: string): this => {
+    cy.get('[data-testid="customer_address"]').find('input').should('have.value', address)
+    cy.wait(500)
+    return this
+  }
+
+  /**
+   * Confirms the mobile number of the customer.
+   * @param mobile - The expected mobile number of the customer.
+   * @returns The instance of the AddCustomer page.
+   */
+  confirmCustomerMobile = (mobile: string): this => {
+    cy.get('[data-testid="customer_mobile"]').find('input').should('have.value', mobile)
+    cy.wait(500)
+    return this
+  }
+
+  /**
+   * Confirms the credit limit of the customer.
+   * @param creditLimit - The expected credit limit of the customer.
+   * @returns The instance of the AddCustomer page.
+   */
+  confirmCustomerCreditLimit = (creditLimit: string): this => {
+    cy.get('[data-testid="customer_credit_limit"]').find('input').should('have.value', creditLimit)
+    cy.wait(500)
+    return this
+  }
 }
