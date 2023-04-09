@@ -1,7 +1,9 @@
 {
   "name": "mpeke-cy-library",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^6.6.6"
+  },
   "devDependencies": {
     "@types/node": "^14.11.2",
     "cypress": "^12.9.0",
