@@ -112,6 +112,19 @@ export class AddCustomer {
     cy.wait(500);
     return this;
   };
+  // -------- Confirm Functions -------
+
+  /**
+   * Confirms the category of the customer.
+   * @param category - The expected category of the customer.
+   * @returns The instance of the AddCustomer page.
+   */
+  confirmCustomerCategory = (category='Walk in Customer') => {
+    cy.get('[data-testid="customer_category"]')
+      .find('input').should('contain.value',category.toUpperCase())
+    cy.wait(500)
+    return this
+  }
 
   /**
    * Confirms the name of the customer.
