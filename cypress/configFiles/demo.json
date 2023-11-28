@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://demo-mpekerx.marascientific.com",
+    "env": {
+      "environment": "demo"
+    }
+}

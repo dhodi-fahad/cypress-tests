@@ -16,7 +16,16 @@
     "compile": "tsc",
     "fix": "gts fix",
     "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "cy:local-open": "cypress open --env fileConfig=local",
+    "cy:local-headless": "cypress open --env fileConfig=local",
+    "cy:demo-open": "cypress run --env fileConfig=demo",
+    "cy:demo-headless": "cypress run --env fileConfig=demo",
+    "local-headless": "npm run cy:local-headless",
+    "local-open": "npm run cy:local-open",
+    "demo-headless": "npm run cy:demo-headless",
+    "demo-open": "npm run cy:demo-open",
+    "clean:reports": "rm -rf cypress/screenshots cypress/videos",
+    "pretest": "npm run clean:reports"
   }
 }
